@@ -1,0 +1,45 @@
+.main-container {
+  width: 80%;
+  margin: 0 auto;
+}
+thead {
+  color: white;
+  background-color: black;
+  text-align: left;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px 10px;
+}
+td {
+  border-bottom: 2px solid #eeeeee;
+}
+.border-bottom {
+  border-bottom: 2px solid #eeeeee;
+}
+.section {
+  display: flex;
+  border: 2px solid #eeeeee;
+  border-radius: 5px;
+  padding: 10px 10px;
+  justify-content: space-between;
+}
+.opt1 {
+  font-size: large;
+}
+.opt2 {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+}
+.opt3 {
+  color: #888888;
+}
+#content {
+  width: 100%;
+}
