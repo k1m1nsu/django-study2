@@ -1,6 +1,7 @@
 .main-container {
   width: 80%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 thead {
   color: white;
@@ -42,4 +43,36 @@ td {
 }
 #content {
   width: 100%;
+}
+.form-control {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: solid 2px #eeeeee;
+  padding: 10px 10px;
+}
+textarea {
+  resize: none;
+}
+.btn {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: medium;
+  text-decoration-line: none;
+}
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+.alert {
+  padding: 10px 10px;
+  background-color: #f8d7da;
+  border-radius: 5px;
+}
+label {
+  margin: 10px 5px;
 }

@@ -30,8 +30,13 @@
     {% csrf_token %}
     <div>
       <label for="content">답변내용</label>
-      <textarea name="content" id="content" rows="15"></textarea>
-      <input type="submit" value="답변등록" />
+      <textarea
+        class="form-control"
+        name="content"
+        id="content"
+        rows="15"
+      ></textarea>
+      <input class="btn btn-primary" type="submit" value="답변등록" />
     </div>
   </form>
 </div>
