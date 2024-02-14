@@ -28,6 +28,17 @@
   {% endfor %}
   <form action="{% url 'pybo:answer_create' question.id %}" method="post">
     {% csrf_token %}
+    <!-- 오류표시 Start -->
+
+    {% if form.errors %}
+
+    <div>
+      {% for field in form %} {% if field.errors %}
+      <div class="alert"><strong>{{field.label}}</strong>{{field.errors}}</div>
+      {% endif %} {% endfor %}
+    </div>
+    {% endif %}
+    <!-- 오류표시 End -->
     <div>
       <label for="content">답변내용</label>
       <textarea
