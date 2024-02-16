@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<!-- 답변 수정 -->
+<div class="main-container">
+    <form method="post" action="{% url 'pybo:answer_modify' answer.id %}">
+        {% csrf_token %} {% include "form_errors.html" %}
+        <div>
+            <label for="content">답변 내용</label>
+            <textarea
+                class="form-control"
+                name="content"
+                id="content"
+                rows="10"
+            >
+{{form.content.value|default_if_none:''}}</textarea
+            >
+            <button type="submit" class="btn btn-primary">저장하기</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

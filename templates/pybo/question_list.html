@@ -6,21 +6,31 @@
             <tr>
                 <th>번호</th>
                 <th>제목</th>
+                <th>글쓴이</th>
                 <th>작성일시</th>
             </tr>
         </thead>
         <tbody>
             {% if question_list %} {% for question in question_list %}
             <tr>
-                <td>{{ forloop.counter }}</td>
+                <td>{{ question.id}}</td>
                 <td>
+                    <!-- prettier-ignore -->
                     <a href="{% url 'pybo:detail' question.id %}">{{question.subject}}</a>
+                    <!-- prettier-ignore -->
+                    {% if question.answer_set.count > 0 %}
+                    <span class="commentNum"
+                        >{{question.answer_set.count}}</span
+                    >
+                    <!-- prettier-ignore -->
+                    {% endif %}
                 </td>
+                <td>{{question.author.username}}</td>
                 <td>{{question.create_date|date:'Y-m-d'}}</td>
             </tr>
             {% endfor %} {% else %}
             <tr>
-                <td colspan="3">질문이 없습니다.</td>
+                <td colspan="4">질문이 없습니다.</td>
             </tr>
             {% endif %}
         </tbody>
@@ -30,7 +40,11 @@
         <!-- 이전페이지 -->
         {% if question_list.has_previous %}
         <li>
-            <a class="page-link" href="?page={{question_list.previous_page_number}}">이전</a>
+            <a
+                class="page-link"
+                href="?page={{question_list.previous_page_number}}"
+                >이전</a
+            >
         </li>
         {% else %}
         <li class="page-item disabled"><a class="page-link">이전</a></li>
@@ -43,23 +57,31 @@
         <!-- prettier-ignore -->
         {% if page_number == question_list.number %}
         <li class="page-item active">
-            <a class="page-link" href="?page={{page_number}}">{{page_number}}</a>
+            <a class="page-link" href="?page={{page_number}}"
+                >{{page_number}}</a
+            >
         </li>
         {% else %}
         <li class="page-item">
-            <a class="page-link" href="?page={{page_number}}">{{page_number}}</a>
+            <a class="page-link" href="?page={{page_number}}"
+                >{{page_number}}</a
+            >
         </li>
         {% endif %} {% endif %} {% endfor %}
         <!-- 다음페이지 -->
         {% if question_list.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?page={{question_list.next_page_number}}">다음</a>
+            <a class="page-link" href="?page={{question_list.next_page_number}}"
+                >다음</a
+            >
         </li>
         {% else %}
         <li class="page-item disabled"><a class="page-link">다음</a></li>
         {% endif %}
     </ul>
 
-    <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문등록</a>
+    <a href="{% url 'pybo:question_create' %}" class="btn btn-primary"
+        >질문등록</a
+    >
 </div>
 {% endblock content %}

@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 from pybo.models import Question, Answer
 
@@ -21,3 +23,4 @@ class AnswerForm(forms.ModelForm):
         model = Answer
         fields = ['content']
         labels = {'content':'답변내용'}
+
