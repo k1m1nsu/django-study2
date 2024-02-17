@@ -67,7 +67,25 @@ td {
 textarea {
     resize: none;
 }
+.search-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-kw {
+    box-sizing: border-box;
+    height: 36px;
+    padding: 5px 10px;
+    border: #6c757d 1px solid;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.search-box2 {
+    display: flex;
+    align-items: center;
+}
 .btn {
+    box-sizing: border-box;
     display: inline-block;
     border: none;
     border-radius: 5px;

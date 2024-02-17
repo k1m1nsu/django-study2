@@ -53,6 +53,7 @@
         {{question.answer_set.count}}개의 답변이 있습니다.
     </h5>
     {% for answer in question.answer_set.all %}
+    <a id="answer_{{answer.id}}"></a>
     <div>
         <div class="section">
             <div class="opt1">{{answer.content}}</div>
